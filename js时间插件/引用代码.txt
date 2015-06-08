@@ -1,0 +1,5 @@
+<script language="javascript" src="js/Calendar3.js"></script>
+
+<input name="leader_time" type="text" id="control_date" class="text" maxlength="10" onClick="new Calendar().show(this);" readonly="readonly" />
+
+<input type="button" name="button" id="button" value="button" onClick="new Calendar().show(this.form.control_date);" style="display:none" />
