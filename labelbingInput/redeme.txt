@@ -1,0 +1,2 @@
+1.radio控件的传值。
+2.label绑定input(radio)
