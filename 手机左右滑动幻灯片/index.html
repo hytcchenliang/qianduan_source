@@ -1,0 +1,97 @@
+<html>
+<head>
+<title>《神魔》手机官方网站_2013暗黑西游格斗网游 - 银汉</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="js/jquery.event.drag-1.5.min.js"></script>
+<script type="text/javascript" src="js/jquery.touchSlider.js"></script>
+<style>
+.footer {
+	position: absolute;
+	bottom: 35px;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+
+	$(".main_visual").hover(function(){
+		$("#btn_prev,#btn_next").fadeIn()
+	},function(){
+		$("#btn_prev,#btn_next").fadeOut()
+	});
+	
+	$dragBln = false;
+	
+	$(".main_image").touchSlider({
+		flexible : true,
+		speed : 200,
+		btn_prev : $("#btn_prev"),
+		btn_next : $("#btn_next"),
+		paging : $(".flicking_con a"),
+		counter : function (e){
+			$(".flicking_con a").removeClass("on").eq(e.current-1).addClass("on");
+		}
+	});
+	
+	$(".main_image").bind("mousedown", function() {
+		$dragBln = false;
+	});
+	
+	$(".main_image").bind("dragstart", function() {
+		$dragBln = true;
+	});
+	
+	$(".main_image a").click(function(){
+		if($dragBln) {
+			return false;
+		}
+	});
+	
+	timer = setInterval(function(){
+		$("#btn_next").click();
+	}, 5000);
+	
+	$(".main_visual").hover(function(){
+		clearInterval(timer);
+	},function(){
+		timer = setInterval(function(){
+			$("#btn_next").click();
+		},5000);
+	});
+	
+	$(".main_image").bind("touchstart",function(){
+		clearInterval(timer);
+	}).bind("touchend", function(){
+		timer = setInterval(function(){
+			$("#btn_next").click();
+		}, 5000);
+	});
+	
+});
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312"></head>
+<body>
+<div id="wrap">
+  <div class="banner_field">
+    <div id="banner" class="banner">
+      <div class="main_visual">
+        <div class="main_image">
+          <ul id="slideul" style="width: 494px; overflow: visible;">
+            <li style="float: none; display: block; position: absolute; top: 0px; left: 0px; width: 494px; background: url(images/slider_1.jpg) no-repeat;"></li>
+            <li style="float: none; display: block; position: absolute; top: 0px; left: -1482px; width: 494px; background: url(images/slider_2.jpg) no-repeat;"></li>
+            <li style="float: none; display: block; position: absolute; top: 0px; left: -988px; width: 494px; background: url(images/slider_3.jpg) no-repeat;"></li>
+            <li style="float: none; display: block; position: absolute; top: 0px; left: -494px; width: 494px; background: url(images/slider_4.jpg) no-repeat;"></li>
+          </ul>
+          <a href="javascript:;" id="btn_prev" style="width: 494px; overflow: visible; display: none;"></a> <a href="javascript:;" id="btn_next" style="width: 494px; overflow: visible; display: none;"></a> </div>
+      </div>
+      <div class="flicking_con" id="flicking_con"><a href="#" class="on"></a><a href="#" class=""></a><a href="#" class=""></a><a href="#" class=""></a></div>
+    </div>
+    
+  </div>
+  
+</div>
+<div style="margin:20px auto; text-align:center">
+<a href="http://www.100sucai.com/" style="color:#06F">更多特效代码欢迎访问：100素材网</a>
+</div>
+</body>
+</html>

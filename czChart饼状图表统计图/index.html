@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>jQuery czChart Examples</title>
+<style>
+.chart-canvas {
+border: black 1px solid;
+}
+.testChart {
+display: inline-block;
+width: 400px;
+height: 300px;
+border: black 1px solid;
+margin-left: 100px;
+margin-top: 20px;
+}
+</style>
+<link type="text/css" href="css/czchart.css" rel="stylesheet"/>
+<script type="text/javascript" src="js/excanvas.js"></script>
+<script src="jquery.min.js"></script>
+<script type="text/javascript" src="js/czGraphic.js"></script>
+<script type="text/javascript" src="js/czchart.js"></script>
+<script type="text/javascript" src="js/czPieChart.js"></script>
+<script type="text/javascript" src="js/czBarChart.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+</head>
+<body>
+<div style="text-align:center; font-weight:bold; font-size:24px;">查看更多素材:<a style="color:#2dbdf1;"href="http://www.100sucai.com">100sucai.com</a></div>
+<div style="text-align:center">
+<div id="piechart" class="testChart"></div>
+</div>
+<script type="text/javascript">
+	      
+
+            var pieChart = $("#piechart").czChart({
+    			data:[115,120,14,50,60],
+    			dataLabels:["one","two","three","four","five"],
+    			type:'pieChart',
+    			title: {
+    				label:"pie chart",
+    				position:"bottom"
+    			},
+    			pieChart:{
+    				radius: 0,
+    				valuePosition:"inside",
+    				minAngleForValue:15    				
+    			},
+    			legend:{
+    				location:"ne"
+    			}
+            });
+            
+    	</script>
+
+
+</body>
+</html>

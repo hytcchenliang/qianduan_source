@@ -1,0 +1,3 @@
+var protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cspan id='yh_stat'%3E%3C/span%3E%3Cscript src='" + protocol + "120.132.146.200:8094/stat/yh_stat.js' type='text/javascript'%3E%3C/script%3E"));
+//document.write(unescape("%3Cspan id='yh_stat'%3E%3C/span%3E%3Cscript src='" + protocol + "192.168.2.20:7071/stat/yh_stat.js' type='text/javascript'%3E%3C/script%3E"));
